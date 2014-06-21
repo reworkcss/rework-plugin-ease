@@ -1,6 +1,6 @@
 
 var rework = require('rework')
-  , inline = require('../')
+  , ease = require('../')
   , fs = require('fs')
   , assert = require('assert')
   , read = fs.readFileSync;
@@ -12,7 +12,7 @@ function fixture(name) {
 describe('.ease()', function(){
   it('should add additional easing functions', function(){
     rework(fixture('easing'))
-      .use(rework.ease())
+      .use(ease())
       .toString()
       .should.equal(fixture('easing.out'));
   })
